@@ -844,15 +844,17 @@ if you are not sure about the structure.
                             )
 
                 # validate parameter value range
-                if parameter_rule.min is not None and parameter_value < parameter_rule.min:
-                    raise ValueError(
-                        f"Model Parameter {parameter_name} should be greater than or equal to {parameter_rule.min}."
-                    )
+                parameter_value  = parameter_rule.min if parameter_value < parameter_rule.min else parameter_value
+                parameter_value  = parameter_rule.max if parameter_value > parameter_rule.max else parameter_value
+                # if parameter_rule.min is not None and parameter_value < parameter_rule.min:
+                #     raise ValueError(
+                #         f"Model Parameter {parameter_name} should be greater than or equal to {parameter_rule.min}."
+                #     )
 
-                if parameter_rule.max is not None and parameter_value > parameter_rule.max:
-                    raise ValueError(
-                        f"Model Parameter {parameter_name} should be less than or equal to {parameter_rule.max}."
-                    )
+                # if parameter_rule.max is not None and parameter_value > parameter_rule.max:
+                #     raise ValueError(
+                #         f"Model Parameter {parameter_name} should be less than or equal to {parameter_rule.max}."
+                #     )
             elif parameter_rule.type == ParameterType.BOOLEAN:
                 if not isinstance(parameter_value, bool):
                     raise ValueError(f"Model Parameter {parameter_name} should be bool.")

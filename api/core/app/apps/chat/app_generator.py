@@ -90,8 +90,8 @@ class ChatAppGenerator(MessageBasedAppGenerator):
         # validate override model config
         override_model_config_dict = None
         if args.get("model_config"):
-            if invoke_from != InvokeFrom.DEBUGGER:
-                raise ValueError("Only in App debug mode can override model config")
+            # if invoke_from != InvokeFrom.DEBUGGER:
+            #     raise ValueError("Only in App debug mode can override model config")
 
             # validate config
             override_model_config_dict = ChatAppConfigManager.config_validate(

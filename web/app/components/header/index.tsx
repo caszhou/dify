@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <div className='flex flex-1 items-center justify-between px-4'>
       <div className='flex items-center'>
-        {isMobile && <div
+        {/* {isMobile && <div
           className='flex items-center justify-center h-8 w-8 cursor-pointer'
           onClick={toggle}
         >
@@ -60,16 +60,16 @@ const Header = () => {
             <LogoSite className='object-contain' />
           </Link>
           <GithubStar />
-        </>}
+        </>} */}
       </div>
-      {isMobile && (
+      {/* {isMobile && (
         <div className='flex'>
           <Link href="/apps" className='flex items-center mr-4'>
             <LogoSite />
           </Link>
           <GithubStar />
         </div>
-      )}
+      )} */}
       {!isMobile && (
         <div className='flex items-center'>
           {!isCurrentWorkspaceDatasetOperator && <ExploreNav className={navClassName} />}
