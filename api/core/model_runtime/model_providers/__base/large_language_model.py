@@ -844,8 +844,8 @@ if you are not sure about the structure.
                             )
 
                 # validate parameter value range
-                parameter_value  = parameter_rule.min if parameter_value < parameter_rule.min else parameter_value
-                parameter_value  = parameter_rule.max if parameter_value > parameter_rule.max else parameter_value
+                parameter_value = max(parameter_value, parameter_rule.min)
+                parameter_value = min(parameter_value, parameter_rule.max)
                 # if parameter_rule.min is not None and parameter_value < parameter_rule.min:
                 #     raise ValueError(
                 #         f"Model Parameter {parameter_name} should be greater than or equal to {parameter_rule.min}."
