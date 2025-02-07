@@ -193,6 +193,3 @@ api/.vscode
 
 .idea/
 .vscode
-
-# ignore large data
-api/data
