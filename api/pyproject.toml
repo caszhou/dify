@@ -211,7 +211,7 @@ ruff = "~0.9.2"
 ############################################################
 # Pypi source to aliyun
 ############################################################
-#[[tool.poetry.source]]
-#name = "aliyun"
-#url = "https://mirrors.aliyun.com/pypi/simple/"
-#priority = "primary"
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+priority = "primary"
